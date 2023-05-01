@@ -11,6 +11,7 @@ const bodyPart = [
 
 
 
+
 /* ----BACK WORKOUT -----*/
 
 
@@ -42,8 +43,7 @@ function listBack() {
 
 /* ---- END BACK------ */
 
-
-
+listBack()
 
 
 /* ----ARM WORKOUT -----*/
@@ -51,7 +51,7 @@ function listBack() {
 
 // Arm excersise choices 
 const armExercise = [
-    '',
+    'Barbell Bicep Curl:',
     '',
     '',
     '',
@@ -60,9 +60,9 @@ const armExercise = [
     ''
 ];
  
-//function for back excersises
+//function for arm excersises
  
-function listBack() {
+function listArm() {
     const usedIndices = [];
     console.log('Here is today\'s main workout:')
     for (let i = 0; i < 4; i++) {
@@ -80,11 +80,10 @@ function listBack() {
 
 
 
-
 /* ----Chest WORKOUT -----*/
 
 
-// Arm excersise choices 
+// Chest excersise choices 
 const chestExercise = [
     '',
     '',
@@ -95,9 +94,9 @@ const chestExercise = [
     ''
 ];
  
-//function for back excersises
+//function for chest excersises
  
-function listBack() {
+function listChest() {
     const usedIndices = [];
     console.log('Here is today\'s main workout:')
     for (let i = 0; i < 4; i++) {
@@ -115,10 +114,10 @@ function listBack() {
 
 
 
-/* ----Chest WORKOUT -----*/
+/* ----LEG WORKOUT -----*/
 
 
-// Arm excersise choices 
+// Leg excersise choices 
 const legExercise = [
     '',
     '',
@@ -129,9 +128,9 @@ const legExercise = [
     ''
 ];
  
-//function for back excersises
+//function for leg excersises
  
-function listBack() {
+function listLeg() {
     const usedIndices = [];
     console.log('Here is today\'s main workout:')
     for (let i = 0; i < 4; i++) {
@@ -152,7 +151,7 @@ function listBack() {
 /* ----CORE WORKOUT -----*/
 
 
-// Arm excersise choices 
+// Core excersise choices 
 const coreExercise = [
     '',
     '',
@@ -163,9 +162,9 @@ const coreExercise = [
     ''
 ];
  
-//function for back excersises
+//function for core excersises
  
-function listBack() {
+function listCore() {
     const usedIndices = [];
     console.log('Here is today\'s core workout:')
     for (let i = 0; i < 4; i++) {
