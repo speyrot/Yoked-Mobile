@@ -1,180 +1,115 @@
-// body part selection
-const bodyPart = [
-    'back',
-    'arms',
-    'chest',
-    'legs',
-    'core'
+// Define the workout options for each body part
+const backExcercises = [
+    'Deadlift: 5 sets of 5 reps',
+    'Pull ups: 3 sets to failure',
+    'Bent-over Rows: 3 sets of 8 reps',
+    'Chest Supported Rows: 3 sets of 8-10 reps',
+    'Lat Pulldown: 3 sets of 8-10 reps',
+    'Straight Arm Pulldown: 4 sets of 10-12 reps',
+    'Inverted Row: 3 sets of 12-15 reps'
+ ];
+ 
+ const armsExcercises = [
+    'Biceps Curl: 3 sets of 8-10 reps',
+    'Triceps Dip: 3 sets of 8-10 reps',
+    'Hammer Curl: 3 sets of 8-10 reps',
+    'Skull Crushers: 3 sets of 8-10 reps',
+    'Preacher Curl: 3 sets of 8-10 reps',
+    'Triceps Pushdown: 3 sets of 8-10 reps',
+    'Concentration Curl: 3 sets of 8-10 reps'
+ ];
+ 
+ const chestExcercises = [
+    'Bench Press: 5 sets of 5 reps',
+    'Incline Bench Press: 3 sets of 8-10 reps',
+    'Chest Fly: 3 sets of 8-10 reps',
+    'Push Ups: 3 sets to failure',
+    'Chest Press Machine: 3 sets of 8-10 reps',
+    'Dumbbell Pullover: 3 sets of 8-10 reps',
+    'Decline Bench Press: 3 sets of 8-10 reps'
+ ];
+ 
+ const legsExcercises = [
+    'Squats: 5 sets of 5 reps',
+    'Leg Press: 3 sets of 8-10 reps',
+    'Leg Extensions: 3 sets of 8-10 reps',
+    'Lunges: 3 sets of 8-10 reps',
+    'Leg Curls: 3 sets of 8-10 reps',
+    'Calf Raises: 3 sets of 15-20 reps',
+    'Deadlift: 3 sets of 8-10 reps'
+ ];
+
+ const coreExercise = [
+    'Crunches: 3 sets of 20 reps',
+    'Plank: 3 sets for 60 seconds',
+    'Russian Twist: 3 sets of 20 reps',
+    'Bicycle Crunch: 3 sets of 20 reps',
+    'Leg Raises: 3 sets of 12-15 reps',
+    'Oblique Crunch: 3 sets of 20 reps per side',
+    'Reverse Crunch: 3 sets of 12-15 reps'
 ];
 
-/* ---- BREAK --- */
-
-
-
-
-/* ----BACK WORKOUT -----*/
-
-
-// back excersise choices 
-const backExercise = [
-   'Deadlift: 5 sets of 5 reps',
-   'Pull ups: 3 sets to failure',
-   'Bent-over Rows: 3 sets of 8 reps',
-   'Chest Supported Rows: 3 sets of 8-10 reps',
-   'Lat Pulldown: 3 sets of 8-10 reps',
-   'Straight Arm Pulldown: 4 sets of 10-12 reps',
-   'Inverted Row: 3 sets of 12-15 reps'
-];
-
-//function for back excersises
-
-function listBack() {
-    const usedIndices = [];
-    console.log('Here is today\'s main workout:')
-    for (let i = 0; i < 4; i++) {
-    let randomIndex; // Declare a variable to store the random index
-    do { // Start a do-while loop
-    randomIndex = Math.floor(Math.random() * backExercise.length); // Generate a random index for the array
-    } while (usedIndices.includes(randomIndex)); // Continue generating random indices until we find one that hasn't been used yet
-    usedIndices.push(randomIndex); // Add the new index to the list of used indices
-    console.log(backExercise[randomIndex]);
-    }  
+const usedIndices = [];
+function displayWorkoutOptions(bodyPart) {
+    switch (bodyPart) {
+      case 'back':
+        console.log('Here are your back workout options:');
+        for (let i = 0; i < 4; i++) {
+          let randomIndex;
+          do {
+            randomIndex = Math.floor(Math.random() * backExcercises.length);
+          } while (usedIndices.includes(randomIndex));
+          usedIndices.push(randomIndex);
+          console.log(backExcercises[randomIndex]);
+        }
+    break;
+    case 'arms':
+        console.log('Here are your arm workout options:');
+        for (let i = 0; i < 4; i++) {
+          let randomIndex;
+          do {
+            randomIndex = Math.floor(Math.random() * armsExcercises.length);
+          } while (usedIndices.includes(randomIndex));
+          usedIndices.push(randomIndex);
+          console.log(armsExcercises[randomIndex]);
+        }
+    break;
+    case 'chest':
+        console.log('Here are your chest workout options:');
+        for (let i = 0; i < 4; i++) {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * chestExcercises.length);
+            } while (usedIndices.includes(randomIndex));
+                usedIndices.push(randomIndex);
+                console.log(chestExcercises[randomIndex]);
+            }
+    break;
+    case 'legs':
+        console.log('Here are your leg workout options:');
+        for (let i = 0; i < 4; i++) {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * legsExcercises.length);
+            } while (usedIndices.includes(randomIndex));
+                usedIndices.push(randomIndex);
+                console.log(legsExcercises[randomIndex]);
+            }
+    break;
+    case 'core':
+        console.log('Here are your core workout options:');
+        for (let i = 0; i < 4; i++) {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * coreExercise.length);
+            } while (usedIndices.includes(randomIndex));
+                usedIndices.push(randomIndex);
+                console.log(coreExercise[randomIndex]);
+            }
+    break;
+    default:
+        console.log('Invalid body part selected. Please try again.');
+    }
 }
 
-/* ---- END BACK------ */
-
-listBack()
-
-
-/* ----ARM WORKOUT -----*/
-
-
-// Arm excersise choices 
-const armExercise = [
-    'Barbell Bicep Curl:',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
-];
- 
-//function for arm excersises
- 
-function listArm() {
-    const usedIndices = [];
-    console.log('Here is today\'s main workout:')
-    for (let i = 0; i < 4; i++) {
-        let randomIndex; // Declare a variable to store the random index
-        do { // Start a do-while loop
-            randomIndex = Math.floor(Math.random() * armExercise.length); // Generate a random index for the array
-        } while (usedIndices.includes(randomIndex)); // Continue generating random indices until we find one that hasn't been used yet
-            usedIndices.push(randomIndex); // Add the new index to the list of used indices
-            console.log(armExercise[randomIndex]);
-    }  
-}
- 
-/* ---- END ARM------ */
-
-
-
-
-/* ----Chest WORKOUT -----*/
-
-
-// Chest excersise choices 
-const chestExercise = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
-];
- 
-//function for chest excersises
- 
-function listChest() {
-    const usedIndices = [];
-    console.log('Here is today\'s main workout:')
-    for (let i = 0; i < 4; i++) {
-        let randomIndex; // Declare a variable to store the random index
-        do { // Start a do-while loop
-            randomIndex = Math.floor(Math.random() * chestExercise.length); // Generate a random index for the array
-        } while (usedIndices.includes(randomIndex)); // Continue generating random indices until we find one that hasn't been used yet
-            usedIndices.push(randomIndex); // Add the new index to the list of used indices
-            console.log(chestExercise[randomIndex]);
-    }  
-}
- 
-/* ---- END CHEST------ */
-
-
-
-
-/* ----LEG WORKOUT -----*/
-
-
-// Leg excersise choices 
-const legExercise = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
-];
- 
-//function for leg excersises
- 
-function listLeg() {
-    const usedIndices = [];
-    console.log('Here is today\'s main workout:')
-    for (let i = 0; i < 4; i++) {
-        let randomIndex; // Declare a variable to store the random index
-        do { // Start a do-while loop
-            randomIndex = Math.floor(Math.random() * legExercise.length); // Generate a random index for the array
-        } while (usedIndices.includes(randomIndex)); // Continue generating random indices until we find one that hasn't been used yet
-            usedIndices.push(randomIndex); // Add the new index to the list of used indices
-            console.log(legExercise[randomIndex]);
-    }  
-}
- 
-/* ---- END LEG------ */
-
-
-
-
-/* ----CORE WORKOUT -----*/
-
-
-// Core excersise choices 
-const coreExercise = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
-];
- 
-//function for core excersises
- 
-function listCore() {
-    const usedIndices = [];
-    console.log('Here is today\'s core workout:')
-    for (let i = 0; i < 4; i++) {
-        let randomIndex; // Declare a variable to store the random index
-        do { // Start a do-while loop
-            randomIndex = Math.floor(Math.random() * coreExercise.length); // Generate a random index for the array
-        } while (usedIndices.includes(randomIndex)); // Continue generating random indices until we find one that hasn't been used yet
-            usedIndices.push(randomIndex); // Add the new index to the list of used indices
-            console.log(coreExercise[randomIndex]);
-    }  
-}
- 
-/* ---- END CORE------ */
+displayWorkoutOptions('core')
