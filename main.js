@@ -112,4 +112,4 @@ function displayWorkoutOptions(bodyPart) {
     }
 }
 
-displayWorkoutOptions('core')
+displayWorkoutOptions('chest')
