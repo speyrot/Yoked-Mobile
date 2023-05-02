@@ -39,6 +39,16 @@ const backExcercises = [
     'Deadlift: 3 sets of 8-10 reps'
  ];
 
+ const shoulderExcercises = [
+    'Military Press: 5 sets of 5 reps',
+    'Arnold Press: 3 sets of 8-10 reps',
+    'Dumbbell Lateral Raises: 3 sets of 12-15 reps',
+    'Barbell Front Raises: 3 sets of 8-10 reps',
+    'Upright Row: 3 sets of 8-10 reps',
+    'Bent-Over Lateral Raises: 3 sets of 12-15 reps',
+    'Reverse Fly: 3 sets of 12-15 reps'
+];
+
  const coreExercise = [
     'Crunches: 3 sets of 20 reps',
     'Plank: 3 sets for 60 seconds',
@@ -48,6 +58,9 @@ const backExcercises = [
     'Oblique Crunch: 3 sets of 20 reps per side',
     'Reverse Crunch: 3 sets of 12-15 reps'
 ];
+
+
+
 
 const usedIndices = [];
 function displayWorkoutOptions(bodyPart) {
@@ -96,6 +109,17 @@ function displayWorkoutOptions(bodyPart) {
                 console.log(legsExcercises[randomIndex]);
             }
     break;
+    case 'shoulders':
+        console.log('Here are your core workout options:');
+        for (let i = 0; i < 4; i++) {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * shoulderExcercises.length);
+            } while (usedIndices.includes(randomIndex));
+                usedIndices.push(randomIndex);
+                console.log(shoulderExcercises[randomIndex]);
+            }
+    break;
     case 'core':
         console.log('Here are your core workout options:');
         for (let i = 0; i < 4; i++) {
@@ -111,5 +135,7 @@ function displayWorkoutOptions(bodyPart) {
         console.log('Invalid body part selected. Please try again.');
     }
 }
+  
+  
 
-displayWorkoutOptions('chest')
+displayWorkoutOptions('shoulders')
